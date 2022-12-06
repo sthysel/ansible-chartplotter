@@ -1,0 +1,5 @@
+- name: USB auto mounter
+  pacman:
+    name:
+      - udisks2
+      - udiskie

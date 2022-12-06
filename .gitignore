@@ -1,0 +1,8 @@
+venv/
+.env
+s3sh-keys/
+.#*
+tags
+ssh-keys/
+certs/
+ansible.log

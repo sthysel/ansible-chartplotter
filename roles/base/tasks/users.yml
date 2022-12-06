@@ -1,0 +1,10 @@
+- name: User Pia
+  user:
+    name: pia
+    append: yes
+
+- name: Emergency user
+  user:
+    name: bro
+    groups: wheel
+    append: yes
