@@ -1,6 +1,7 @@
 SHELL := /bin/bash
 .SHELLFLAGS = -ec
 LIMIT ?=NA
+TAGS ?= "all"
 
 ifeq (, $(shell which poetry))
 	$(error "No poetry in $(PATH), do \$make env/bootstrap")
@@ -16,7 +17,7 @@ env/install-poetry: ## Install poetry
 
 env/install-tooling: ## Prepare Python environment
 	poetry install
-	poetry run ansible-galaxy install -r requirements.yml
+	poetry run ansible-galaxy collections install -r requirements.yml
 
 env/bootstrap: env/install-poetry env/install-tooling ## Bootstrap ansible environment into existence
 
@@ -29,7 +30,7 @@ qa/all:  ## Run pre-commit QA pipeline on all files
 
 deploy: ## Deploy against inventory
 	echo "Limiting deployment to ${LIMIT}"
-	poetry run ansible-playbook -u thys -k -K -i inventories/ -l ${LIMIT} provision.yml ${ANSIBLE_ARGS}
+	poetry run ansible-playbook -u thys -k -K -i inventories/ --limit ${LIMIT} --tags ${TAGS} provision.yml ${ANSIBLE_ARGS}
 
 .DEFAULT_GOAL := help
 .PHONY: help

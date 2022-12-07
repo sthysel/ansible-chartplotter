@@ -4,5 +4,13 @@
   roles:
     - name: jahrik.yay
       install: true
+      tags:
+        - always
     - name: base
     - name: navigation
+      tags:
+        - plotter
+        - navigation
+    - name: desktop
+      tags:
+        - desktop

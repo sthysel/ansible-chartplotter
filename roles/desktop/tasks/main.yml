@@ -1,16 +1,10 @@
-- name: Remove i3-wm
-  become: true
-  pacman:
-    name:
-      - i3-wm
-      - compton
-    state: removed
 
 - name: Install i3 and things it needs
-  become: true
-  become_user: aur_builder
-  aur:
+  kewlfft.aur.aur:
+    use: yay
     name:
+      - i3-wm
+      - i3-gnome
       - acpi
       - bc
       - calcurse
@@ -18,7 +12,6 @@
       - dunst
       - feh
       - flameshot
-      - i3-gaps
       - i3blocks
       - i3status
       - kitty
@@ -37,49 +30,29 @@
       - xorg-xinit
       - xsel
 
-- name: Install sweet fonts
-  become: yes
-  pacman:
-    name:
-      - noto-fonts
-      - terminus-font
-      - ttf-dejavu
-      - ttf-droid
-      - ttf-font-awesome
-      - ttf-inconsolata
-      - ttf-joypixels
-      - ttf-liberation
-      - ttf-roboto
-      - ttf-ubuntu-font-family
-    state: present
 
 - name: Automatic monitor activation on laptop docking and the like
-  become: yes
   copy:
     dest: "/etc/udev/rules.d/carbs-screens.conf"
     content: |
       KERNEL=="card0", ACTION=="change", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/{{carbs_user}}/.Xauthority", RUN+="/home/{{carbs_user}}/.local/bin/hotplug_monitor.sh"
 
 - name: Install documentation generation tools pandoc and latex
-  become: yes
-  pacman:
+  kewlfft.aur.aur:
     name:
       - pandoc
       - texlive-most
 
 - name: Install vim and emacs
-  become: yes
-  pacman:
+  kewlfft.aur.aur:
     name:
       - neovim
       - emacs
     state: present
 
 - name: Music
-  become: yes
-  pacman:
+  kewlfft.aur.aur:
     name:
-      - mplayer
       - pavucontrol
       - pulsemixer
       - playerctl
@@ -89,3 +62,5 @@
       - mpv
       - ncmpcpp
     state: present
+
+- import_tasks: fonts.yml

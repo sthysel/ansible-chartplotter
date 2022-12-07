@@ -1,0 +1,15 @@
+- name: Install sweet fonts
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - noto-fonts
+      - terminus-font
+      - ttf-dejavu
+      - ttf-droid
+      - ttf-font-awesome
+      - ttf-inconsolata
+      - ttf-joypixels
+      - ttf-liberation
+      - ttf-roboto
+      - ttf-ubuntu-font-family
+    state: present
