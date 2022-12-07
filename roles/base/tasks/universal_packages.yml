@@ -25,4 +25,6 @@
       - zsh
       - zsh-theme-powerlevel10k
       - pyenv
+      - inxi
+      - man
     state: present

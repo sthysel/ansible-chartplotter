@@ -8,12 +8,12 @@
 # the key needs to be installed by the same user that does the install
 - name: Install gpg key
   ansible.builtin.command: gpg --recv-keys BF38D4D02A328DFF
-  become: yes
+  become: true
   become_user: aur_builder
 
 - name: Install Stellarium-bin
   kewlfft.aur.aur:
     name: stellarium-bin
     state: present
-  become: yes
+  become: true
   become_user: aur_builder

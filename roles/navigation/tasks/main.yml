@@ -1,4 +1,3 @@
 
-- import_tasks: gpsd.yml
 - import_tasks: stellarium.yml
 - import_tasks: opencpn.yml

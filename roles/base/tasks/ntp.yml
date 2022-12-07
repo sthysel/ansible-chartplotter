@@ -1,0 +1,28 @@
+
+- name: Install ntp
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - ntp
+      - networkmanager-dispatcher-ntpd
+    state: present
+
+
+- name: Using ntpd with gpsd
+  copy:
+    dest: /etc/ntp.conf
+    content: |
+      #=========================================================
+      #  GPSD native ntpd driver
+      #=========================================================
+      # This driver exists from at least ntp version 4.2.8
+      # Details at
+      #   https://www.eecis.udel.edu/~mills/ntp/html/drivers/driver46.html
+      server 127.127.46.0
+      fudge 127.127.46.0 time1 0.0 time2 0.0 refid GPS
+
+- name: Enable ntp service
+  systemd:
+    enabled: yes
+    state: started
+    name: ntpd

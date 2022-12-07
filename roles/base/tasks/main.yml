@@ -7,3 +7,5 @@
 - import_tasks: nobeep.yml
 - import_tasks: entropy.yml
 - import_tasks: usb.yml
+- import_tasks: gpsd.yml
+- import_tasks: ntp.yml

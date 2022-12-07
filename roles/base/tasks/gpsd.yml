@@ -1,4 +1,9 @@
 
+
+# ubxtool -P 18.00
+# ubxtool -p SAVE
+# ubxtool -p COLDBOOT
+
 - name: Install gpsd
   kewlfft.aur.aur:
     use: yay
