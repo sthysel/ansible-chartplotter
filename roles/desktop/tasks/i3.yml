@@ -1,0 +1,37 @@
+
+- name: Install i3 and things it needs
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - i3-wm
+      - i3-gnome
+      - acpi
+      - bc
+      - calcurse
+      - conky
+      - dunst
+      - feh
+      - flameshot
+      - i3blocks
+      - i3status
+      - kitty
+      - lightdm
+      - lightdm-gtk-greeter
+      - numlockx
+      - openvpn
+      - picom
+      - rofi
+      - rofi-emoji
+      - sysstat
+      - xclip
+      - xdotool
+      - xorg-apps
+      - xorg-server
+      - xorg-xinit
+      - xsel
+
+- name: Automatic monitor activation on laptop docking and the like
+  copy:
+    dest: "/etc/udev/rules.d/carbs-screens.conf"
+    content: |
+      KERNEL=="card0", ACTION=="change", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/{{carbs_user}}/.Xauthority", RUN+="/home/{{carbs_user}}/.local/bin/hotplug_monitor.sh"

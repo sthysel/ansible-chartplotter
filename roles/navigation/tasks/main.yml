@@ -1,32 +1,4 @@
 
-- name: Install gpsd
-  kewlfft.aur.aur:
-    use: yay
-    name:
-      - gpsd
-    state: present
-
-- name: Enable gpsd service
-  systemd:
-    enabled: yes
-    state: started
-    name: gpsd
-
-- name: Install Stellarium
-  kewlfft.aur.aur:
-    use: yay
-    name:
-      - stellarium
-    state: present
-
-- name: Install OpenCPN
-  kewlfft.aur.aur:
-    use: yay
-    name:
-      - opencpn
-      - opencpn-plugin-o_charts
-      - opencpn-plugin-climatology
-      # - opencpn-plugin-route
-      # - opencpn-plugin-weatherfax
-      - opencpn-plugin-weatherrouting
-    state: present
+- import_tasks: gpsd.yml
+- import_tasks: stellarium.yml
+- import_tasks: opencpn.yml

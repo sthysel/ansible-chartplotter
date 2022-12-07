@@ -1,0 +1,13 @@
+
+- name: Install gpsd
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - gpsd
+    state: present
+
+- name: Enable gpsd service
+  systemd:
+    enabled: yes
+    state: started
+    name: gpsd

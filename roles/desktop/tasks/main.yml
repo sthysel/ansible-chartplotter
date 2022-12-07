@@ -2,12 +2,7 @@
 - import_tasks: i3.yml
 - import_tasks: fonts.yml
 - import_tasks: music.yml
-
-- name: Install documentation generation tools pandoc and latex
-  kewlfft.aur.aur:
-    name:
-      - pandoc
-      - texlive-most
+- import_tasks: doctools.yml
 
 - name: Install vim and emacs
   kewlfft.aur.aur:

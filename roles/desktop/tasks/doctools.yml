@@ -1,0 +1,13 @@
+
+
+- name: Remove pandoc and its sea of haskel deps
+  community.general.pacman:
+    name: pandoc
+    state: absent
+    extra_args: --recursive
+
+- name: Install documentation generation tools pandoc and latex
+  kewlfft.aur.aur:
+    name:
+      - pandoc-bin
+      - texlive-most
