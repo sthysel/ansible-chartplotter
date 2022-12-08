@@ -6,7 +6,7 @@
       - opensc
 
 - name: Enable entropy service
-  ansible.buildin.systemd:
+  ansible.builtin.systemd:
     enabled: true
     state: started
     name: rngd

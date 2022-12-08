@@ -12,7 +12,7 @@
     state: present
 
 - name: Enable gpsd service
-  ansible.buildin.systemd:
+  ansible.builtin.systemd:
     enabled: yes
     state: started
     name: gpsd
