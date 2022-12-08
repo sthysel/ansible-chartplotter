@@ -1,0 +1,7 @@
+
+- name: Video
+  kewlfft.aur.aur:
+    name:
+      - mpv
+      - vlc
+    state: present

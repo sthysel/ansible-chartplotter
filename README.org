@@ -1,0 +1,20 @@
+* Chart plotter provisioning
+
+This [[https://www.ansible.com/][Ansible]] playbook builds out a general Navigation chart plotter system on a
+target Arch Linux host.
+
+** Pre-requisites
+- A general minimal Arch Linux install target device, preferably a tablet or
+  laptop with on-board GPS
+- A root user, you will normally be required to create a root user during the
+  original install
+
+** Tools and systems provisioned by this playbook
+
+*** gpsd
+Managing any local GPS's for plotting and potentially NTP time syncing use. For
+time syncing a GPS supporting PPS is needed.
+
+*** ntpd
+Time server potentially wired to GPS if GPS supports PPS
+
