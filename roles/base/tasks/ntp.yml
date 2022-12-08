@@ -9,7 +9,7 @@
 
 
 - name: Using ntpd with gpsd
-  copy:
+  ansible.buildin.copy:
     dest: /etc/ntp.conf
     content: |
       #=========================================================
@@ -22,7 +22,7 @@
       fudge 127.127.46.0 time1 0.0 time2 0.0 refid GPS
 
 - name: Enable ntp service
-  systemd:
-    enabled: yes
+  ansible.buildin.systemd:
+    enabled: true
     state: started
     name: ntpd

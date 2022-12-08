@@ -12,19 +12,19 @@
       - git
       - htop
       - imagemagick
+      - inxi
       - lsd
       - make
+      - man
       - neofetch
       - networkmanager
       - pacman-contrib
-      - rsync
+      - pyenv
       - ranger
+      - rsync
       - stow
       - trash-cli
       - wget
       - zsh
       - zsh-theme-powerlevel10k
-      - pyenv
-      - inxi
-      - man
     state: present

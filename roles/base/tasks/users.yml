@@ -1,10 +1,11 @@
 - name: User Pia
-  user:
+  ansible.buildin.user:
     name: pia
-    append: yes
+    groups: pia
+    append: true
 
 - name: Emergency user
-  user:
+  ansible.buildin.user:
     name: bro
     groups: wheel
-    append: yes
+    append: true

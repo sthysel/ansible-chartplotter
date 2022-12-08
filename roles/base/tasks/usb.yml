@@ -1,5 +1,5 @@
 - name: USB auto mounter
-  pacman:
+  community.general.pacman:
     name:
       - udisks2
       - udiskie

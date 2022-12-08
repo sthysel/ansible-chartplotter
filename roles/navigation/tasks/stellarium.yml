@@ -1,5 +1,5 @@
 
-- name: Prever stellarium-bin to stellarium that needs to be compiled
+- name: Prefer stellarium-bin to stellarium that needs to be compiled
   community.general.pacman:
     name: stellarium
     state: absent

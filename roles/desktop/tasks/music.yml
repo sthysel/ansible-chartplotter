@@ -7,6 +7,5 @@
       - mpd
       # terminal interface for mpd
       - mpc
-      - mpv
       - ncmpcpp
     state: present

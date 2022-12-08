@@ -1,16 +1,16 @@
 - name: Install reflector to manage mirrorlist
-  pacman:
+  community.general.pacman:
     name:
       - reflector
 
 - name: make sure /etc/pacman.d/hooks/ exist
-  file:
+  ansible.buildin.file:
     path: /etc/pacman.d/hooks/
     state: directory
     mode: '0755'
 
 - name: pacman hook that will run reflector and remove the .pacnew file created every time pacman-mirrorlist gets an upgrade
-  copy:
+  ansible.buildin.copy:
     dest: /etc/pacman.d/hooks/mirrorupgrade.hook
     content: |
       [Trigger]
@@ -25,6 +25,6 @@
       Exec = /bin/sh -c "reflector --country 'Australia' --latest 200 --age 24 --sort rate --save /etc/pacman.d/mirrorlist; rm -f /etc/pacman.d/mirrorlist.pacnew"
 
 - name: update the system
-  pacman:
-    update_cache: yes
-    upgrade: yes
+  community.general.pacman:
+    update_cache: true
+    upgrade: true

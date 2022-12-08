@@ -1,5 +1,5 @@
 - name: No annoying beeps please
-  copy:
+  ansible.buildin.copy:
     dest: "/etc/modprobe.d/nobeep.conf"
     content: |
         # carbs

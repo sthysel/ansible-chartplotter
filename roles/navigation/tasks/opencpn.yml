@@ -1,5 +1,5 @@
 
-- name: Install OpenCPN
+- name: Install OpenCPN and some plugins
   kewlfft.aur.aur:
     use: yay
     name:
