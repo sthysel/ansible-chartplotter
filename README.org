@@ -18,3 +18,13 @@ time syncing a GPS supporting PPS is needed.
 *** ntpd
 Time server potentially wired to GPS if GPS supports PPS
 
+
+** Usage
+
+Add any new target hosts to the inventory. Use make to select a host or hosts
+from the inventory and provision it:
+
+#+begin_src
+make deploy LIMIT=stolen
+#+end_src
+

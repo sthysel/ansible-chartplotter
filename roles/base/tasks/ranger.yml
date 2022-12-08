@@ -1,0 +1,17 @@
+- name: Install ranger and its useful dependencies
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - ranger
+      - file
+      - python-chardet
+      - sudo
+      - python-bidi
+      - kitty
+      - mpv
+      - imagemagick
+      - atool
+      - jq
+      - openscad
+    state: present
+
