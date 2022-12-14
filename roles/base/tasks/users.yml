@@ -1,8 +1,14 @@
+- name: Ensure group "pia" exists
+  ansible.builtin.group:
+    name: pia
+
 - name: User Pia
   ansible.builtin.user:
     name: pia
-    groups: pia
-    append: true
+
+- name: Ensure group "bro" exists
+  ansible.builtin.group:
+    name: bro
 
 - name: Emergency user
   ansible.builtin.user:

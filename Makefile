@@ -2,6 +2,7 @@ SHELL := /bin/bash
 .SHELLFLAGS = -ec
 LIMIT ?=NA
 TAGS ?= "all"
+ANSIBLE_ARGS = "-vvvv"
 
 ifeq (, $(shell which poetry))
 	$(error "No poetry in $(PATH), do \$make env/bootstrap")

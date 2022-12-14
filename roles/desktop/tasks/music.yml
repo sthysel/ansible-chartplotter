@@ -8,4 +8,5 @@
       # terminal interface for mpd
       - mpc
       - ncmpcpp
+      - vlc
     state: present
