@@ -1,0 +1,7 @@
+- name: USB auto mount
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - udisks2
+      - udiskie
+    state: present

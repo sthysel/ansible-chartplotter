@@ -1,15 +1,15 @@
 [tool.poetry]
-name = "iotedge-provision"
+name = "ansible-chartplotter"
 version = "0.1.0"
-description = "Support environment for iotedge provisioning"
-authors = ["BHP IOT Team"]
+description = "Provision chartplotter"
+authors = ["Thys Meintjes"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
-ansible = "^6.5.0"
-pre-commit = "^2.20.0"
-ansible-lint = "^6.8.2"
+python = ">=3.10"
+ansible = ">=6.5.0"
+pre-commit = ">=2.20.0"
+ansible-lint = ">=6.8.2"
 
 [build-system]
 requires = ["poetry-core"]
