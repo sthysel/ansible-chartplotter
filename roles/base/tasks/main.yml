@@ -1,13 +1,15 @@
 ---
-
-- import_tasks: reflector.yml
-- import_tasks: aur.yml
-- import_tasks: universal_packages.yml
-- import_tasks: users.yml
-- import_tasks: nobeep.yml
-- import_tasks: entropy.yml
-- import_tasks: usb.yml
-- import_tasks: gpsd.yml
-- import_tasks: ntp.yml
-- import_tasks: timeshift.yml
-- import_tasks: ranger.yml
+- block:
+    - import_tasks: users.yml
+    - import_tasks: aur.yml
+    - import_tasks: reflector.yml
+    - import_tasks: universal_packages.yml
+    - import_tasks: nobeep.yml
+    - import_tasks: entropy.yml
+    - import_tasks: usbdisks.yml
+    - import_tasks: gpsd.yml
+    - import_tasks: timeshift.yml
+    - import_tasks: ranger.yml
+    - import_tasks: ntp.yml
+  become: true
+  become_user: thys

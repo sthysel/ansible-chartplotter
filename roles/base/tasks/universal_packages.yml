@@ -28,5 +28,4 @@
       - wget
       - zsh
       - zsh-theme-powerlevel10k
-      - ventoy-bin
     state: present

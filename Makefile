@@ -2,7 +2,7 @@ SHELL := /bin/bash
 .SHELLFLAGS = -ec
 LIMIT ?=NA
 TAGS ?= "all"
-ANSIBLE_ARGS = "-vvvv"
+ANSIBLE_ARGS = ""
 
 ifeq (, $(shell which poetry))
 	$(error "No poetry in $(PATH), do \$make env/bootstrap")
@@ -33,12 +33,10 @@ deploy: ## Deploy against inventory
 	echo "Limiting deployment to ${LIMIT}"
 	poetry run ansible-playbook \
 		-u thys \
-		-k \
-		-K \
 		-i inventories/ \
 		--limit ${LIMIT} \
 		--tags ${TAGS} \
-		provision.yml ${ANSIBLE_ARGS}
+		provision.yml
 
 .DEFAULT_GOAL := help
 .PHONY: help

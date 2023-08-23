@@ -1,4 +1,6 @@
 - name: Install ranger and its useful dependencies
+  become: true
+  become_user: thys
   kewlfft.aur.aur:
     use: yay
     name:
